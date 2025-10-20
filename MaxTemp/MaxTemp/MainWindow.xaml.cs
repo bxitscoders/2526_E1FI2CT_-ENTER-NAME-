@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,9 +39,12 @@ namespace MaxTemp
         private void BtnAuswerten_Click(object sender, RoutedEventArgs e)
         {
             //Zugriff auf Datei erstellen.
+          
+            FileStream fs = new FileStream(@"temps.csv", FileMode.Open);
+            StreamReader sr = new StreamReader(fs);
 
             //Anfangswert setzen, um sinnvoll vergleichen zu können.
-
+     
 
             //In einer Schleife die Werte holen und auswerten. Den größten Wert "merken".
 
