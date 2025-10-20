@@ -52,6 +52,27 @@ namespace MaxTemp
 
 
             //In einer Schleife die Werte holen und auswerten. Den größten Wert "merken".
+            while ((zeile = sr.ReadLine()) != null)
+            {
+                zeilen++;
+                int lastComma = zeile.LastIndexOf(',');
+                if (lastComma < 0)
+                    continue;
+
+                String tempText = zeile.Substring(lastComma + 1).Trim();
+                if (double.TryParse(tempText.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double temp))
+                {
+                    erfolgreichGelesen++;
+
+                    if (temp < maxTemp)
+                    {
+                        maxTemp = temp;
+                        maxZeile = zeile;
+                    }
+
+                }
+
+            }
 
 
             //Datei wieder freigeben.
