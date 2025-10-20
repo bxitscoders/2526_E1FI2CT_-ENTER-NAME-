@@ -44,7 +44,12 @@ namespace MaxTemp
             StreamReader sr = new StreamReader(fs);
 
             //Anfangswert setzen, um sinnvoll vergleichen zu können.
-     
+            double maxTemp = double.MinValue;
+            string maxZeile = "";
+            int zeilen = 0, 
+            erfolgreichGelesen = 0;
+            string zeile;
+
 
             //In einer Schleife die Werte holen und auswerten. Den größten Wert "merken".
 
