@@ -85,7 +85,7 @@ namespace MaxTemp
 
                 // Höchstwert anzeigen
 
-                lblAusgabe.Content = $"{maxTemp} °C, ist die höchste Temperatur";
+                lblAusgabe.Content = $"--{maxTemp} °C, ist die höchste Temperatur--";
 
    
             }
